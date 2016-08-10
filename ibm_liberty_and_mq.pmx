@@ -1,0 +1,24 @@
+---
+name: IBM Liberty and MQ
+description: This is for testing, help you create one Liberty and the MQ developer
+keywords: Liberty, MQ
+type: Default
+documentation: ''
+images:
+- name: websphere-liberty
+  source: websphere-liberty:latest
+  category: App Tier
+  type: Default
+  ports:
+  - host_port: '19080'
+    container_port: '9080'
+    proto: TCP
+- name: ibmcom_mq
+  source: ibmcom/mq:latest
+  category: Database
+  type: Default
+  environment:
+  - variable: LICENSE
+    value: accept
+  - variable: MQ_QMGR_NAME
+    value: QM1
